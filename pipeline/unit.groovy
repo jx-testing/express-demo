@@ -4,8 +4,9 @@ def runTest(String targetBranch, String configuration){
     podTemplate(label: label) {
         node(label) {
             container('nodejs'){
-                checkout scm
+                //checkout scm
                 //sh 'sleep 10000'
+                unstash 'workspace'
                 try {
                     sh 'pipeline/unit.sh'
                 } catch (error) {
