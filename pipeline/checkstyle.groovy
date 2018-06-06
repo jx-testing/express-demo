@@ -1,5 +1,5 @@
 
-String handlerName = "checkstyle"
+def name = "checkstyle"
 
 def runTest(String targetBranch, String configuration){  
     
@@ -22,7 +22,4 @@ def runTest(String targetBranch, String configuration){
     }
 }
 
-public void name(){
-    return handlerName
-}
 return this;
