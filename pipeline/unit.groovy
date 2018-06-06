@@ -5,7 +5,7 @@ def runTest(String targetBranch, String configuration){
         node(label) {
             container('nodejs'){
                 checkout scm
-                sh 'sleep 3100'
+                sh 'sleep 10000'
                 try {
                     sh 'pipeline/unit.sh'
                 } catch (error) {
