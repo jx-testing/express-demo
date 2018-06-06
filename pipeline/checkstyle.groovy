@@ -1,5 +1,5 @@
 
-String name = "checkstyle"
+def hanlderName = "checkstyle"
 
 def runTest(String targetBranch, String configuration){  
     
@@ -10,9 +10,9 @@ def runTest(String targetBranch, String configuration){
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/${name}.sh'
+                    sh 'pipeline/${hanlderName}.sh'
                 } catch (error) {
-                    echo "FAILURE: ${name} failed"
+                    echo "FAILURE: ${hanlderName} failed"
                     echo error.message
                     throw error
                 }
@@ -22,6 +22,6 @@ def runTest(String targetBranch, String configuration){
 }
 
 def name(){
-    return name
+    return hanlderName
 }
 return this;
