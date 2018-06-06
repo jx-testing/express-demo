@@ -1,15 +1,19 @@
 def runTest(String targetBranch, String configuration){  
     
-    def label = 'java'
+    def type = 'Static analysis'
+    def label = 'jenkins-nodejs'
+
     podTemplate(label: label) {
         node(label) {
-            checkout scm
-            try {
-                sh 'pipeline/sonar.sh'
-            } catch (error) {
-                echo "FAILURE: SA Tests failed"
-                echo error.message
-                throw error
+            container('nodejs'){
+                unstash 'workspace'
+                try {
+                    sh 'pipeline/sonar.sh'
+                } catch (error) {
+                    echo "FAILURE: ${type} failed"
+                    echo error.message
+                    throw error
+                }
             }
         }
     }
