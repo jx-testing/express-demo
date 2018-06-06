@@ -1,8 +1,9 @@
 
-def hanlderName = "checkstyle"
+def handlerName = "checkstyle"
 
 def runTest(String targetBranch, String configuration){  
     
+    def foo = checkstyle
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
@@ -10,9 +11,9 @@ def runTest(String targetBranch, String configuration){
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/${hanlderName}.sh'
+                    sh 'pipeline/${foo}.sh'
                 } catch (error) {
-                    echo "FAILURE: ${hanlderName} failed"
+                    echo "FAILURE: ${foo} failed"
                     echo error.message
                     throw error
                 }
@@ -22,6 +23,6 @@ def runTest(String targetBranch, String configuration){
 }
 
 def name(){
-    return hanlderName
+    return handlerName
 }
 return this;
