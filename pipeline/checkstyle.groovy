@@ -1,3 +1,6 @@
+
+String name = "Checkstyle scan"
+
 def runTest(String targetBranch, String configuration){  
     
     def type = 'Static analysis'
@@ -20,6 +23,6 @@ def runTest(String targetBranch, String configuration){
 }
 
 def name(){
-    return "Checkstyle scan"
+    return name
 }
 return this;
