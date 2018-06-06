@@ -1,9 +1,13 @@
 #!/bin/bash
+
 echo "This is deploy.sh"
 
-echo "checking registry ip"
+export REG_IP=$(cat docker-registry-ip-address)
 
-cat docker-registry-ip-address
+echo "docker-registry-ip-address is $REG_IP"
+
+
+
 
 
 
