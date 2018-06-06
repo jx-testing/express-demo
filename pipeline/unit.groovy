@@ -17,6 +17,7 @@ def runTest(String targetBranch, String configuration){
                     echo error.message
                     throw error
                 }
+                deleteDir()
             }
         }
     }
