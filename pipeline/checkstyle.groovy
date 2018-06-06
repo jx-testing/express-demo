@@ -5,13 +5,12 @@ def runTest(String targetBranch, String configuration){
 
     podTemplate(label: label) {
         node(label) {
-            def name = 'checkstyle'
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/${name}.sh'
+                    sh 'pipeline/checkstyle.sh'
                 } catch (error) {
-                    echo "FAILURE: ${name} failed"
+                    echo "FAILURE"
                     echo error.message
                     throw error
                 }

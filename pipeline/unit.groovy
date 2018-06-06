@@ -1,6 +1,5 @@
 def runTest(String targetBranch, String configuration){  
     
-    def type = 'Unit tests'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
@@ -10,7 +9,7 @@ def runTest(String targetBranch, String configuration){
                 try {
                     sh 'pipeline/unit.sh'
                 } catch (error) {
-                    echo "FAILURE: ${type} failed"
+                    echo "FAILURE"
                     echo error.message
                     throw error
                 }
@@ -18,4 +17,9 @@ def runTest(String targetBranch, String configuration){
         }
     }
 }
+
+def getName(){
+    return "unit"
+}
+
 return this;
