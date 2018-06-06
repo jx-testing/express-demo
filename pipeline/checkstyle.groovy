@@ -1,7 +1,7 @@
 
 def runTest(String targetBranch, String configuration){  
     
-    def foo = checkstyle
+    def foo = 'checkstyle'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {

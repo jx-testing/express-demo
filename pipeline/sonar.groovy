@@ -1,6 +1,7 @@
+
 def runTest(String targetBranch, String configuration){  
     
-    def type = 'Static analysis'
+    def foo = 'sonar'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
@@ -8,9 +9,9 @@ def runTest(String targetBranch, String configuration){
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/sonar.sh'
+                    sh 'pipeline/${foo}.sh'
                 } catch (error) {
-                    echo "FAILURE: ${type} failed"
+                    echo "FAILURE: ${foo} failed"
                     echo error.message
                     throw error
                 }
@@ -19,7 +20,8 @@ def runTest(String targetBranch, String configuration){
     }
 }
 
-def name(){
-    return "Sonari scan"
+def getName(){
+    return "sonar"
 }
+
 return this;
