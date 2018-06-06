@@ -18,4 +18,8 @@ def runTest(String targetBranch, String configuration){
         }
     }
 }
+
+def name(){
+    return "Checkstyle scan"
+}
 return this;

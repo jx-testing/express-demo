@@ -18,4 +18,8 @@ def runTest(String targetBranch, String configuration){
         }
     }
 }
+
+def name(){
+    return "Sonari scan"
+}
 return this;
