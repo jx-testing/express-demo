@@ -1,4 +1,4 @@
-def runTest(String targetBranch, String configuration){  
+def run(String targetBranch, String configuration){  
     
     def type = 'packaging'
     def label = 'jenkins-nodejs'

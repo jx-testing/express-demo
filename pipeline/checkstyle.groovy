@@ -1,6 +1,6 @@
-def run(String targetBranch, String configuration){  
+def runTest(String targetBranch, String configuration){  
     
-    def type = 'deploy'
+    def type = 'Static analysis'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
@@ -8,7 +8,7 @@ def run(String targetBranch, String configuration){
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/deploy.sh'
+                    sh 'pipeline/checkstyle.sh'
                 } catch (error) {
                     echo "FAILURE: ${type} failed"
                     echo error.message
@@ -19,4 +19,3 @@ def run(String targetBranch, String configuration){
     }
 }
 return this;
-

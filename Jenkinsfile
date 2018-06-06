@@ -8,7 +8,7 @@ def configuration = "config.json"
 def 	packager = 'pipeline/package.groovy'
 def 	deployer = 'pipeline/deploy.groovy'
 def     unitTester = ['pipeline/unit.groovy']
-def     staticAnalyser =  [ 'pipeline/sonar.groovy' ]
+def     staticAnalyser =  [ 'pipeline/sonar.groovy', 'pipeline/checkstyle.groovy']
 def     componentTester = [ 'pipeline/component.groovy' ]
 def     integrationTester = [ 'pipeline/integration.groovy' ]
 
