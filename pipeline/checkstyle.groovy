@@ -1,6 +1,4 @@
 
-def name = "checkstyle"
-
 def runTest(String targetBranch, String configuration){  
     
     def foo = checkstyle
@@ -20,6 +18,10 @@ def runTest(String targetBranch, String configuration){
             }
         }
     }
+}
+
+def getName(){
+    return "checkstyle"
 }
 
 return this;
