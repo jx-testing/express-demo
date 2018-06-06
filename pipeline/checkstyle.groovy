@@ -22,7 +22,7 @@ def runTest(String targetBranch, String configuration){
     }
 }
 
-def name(){
-    return this.handlerName
+public void name(){
+    return handlerName
 }
 return this;
