@@ -1,5 +1,5 @@
 
-def handlerName = "checkstyle"
+String handlerName = "checkstyle"
 
 def runTest(String targetBranch, String configuration){  
     
