@@ -23,6 +23,6 @@ def runTest(String targetBranch, String configuration){
 }
 
 def name(){
-    return handlerName
+    return this.handlerName
 }
 return this;
