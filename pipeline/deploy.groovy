@@ -1,4 +1,4 @@
-def run(String targetBranch, context){
+def run(String targetBranch, String configuration){
     
     node() {
         checkout scm
