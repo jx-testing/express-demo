@@ -1,9 +1,8 @@
 
-String name = "Checkstyle scan"
+String name = "checkstyle"
 
 def runTest(String targetBranch, String configuration){  
     
-    def type = 'Static analysis'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
@@ -11,9 +10,9 @@ def runTest(String targetBranch, String configuration){
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/checkstyle.sh'
+                    sh 'pipeline/${name}.sh'
                 } catch (error) {
-                    echo "FAILURE: ${type} failed"
+                    echo "FAILURE: ${name} failed"
                     echo error.message
                     throw error
                 }
