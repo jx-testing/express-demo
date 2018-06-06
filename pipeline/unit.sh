@@ -1,7 +1,10 @@
 #!/bin/sh
 echo "This is unit.sh"
 
-npm install
+set -ex
+
+npm install && \
+chown -R 10000:10000 node_modules && \
 npm run test
 
 
