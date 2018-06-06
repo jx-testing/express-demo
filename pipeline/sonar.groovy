@@ -1,17 +1,17 @@
 
 def runTest(String targetBranch, String configuration){  
     
-    def foo = 'sonar'
     def label = 'jenkins-nodejs'
 
     podTemplate(label: label) {
         node(label) {
+            def name = 'sonar'
             container('nodejs'){
                 unstash 'workspace'
                 try {
-                    sh 'pipeline/${foo}.sh'
+                    sh 'pipeline/${name}.sh'
                 } catch (error) {
-                    echo "FAILURE: ${foo} failed"
+                    echo "FAILURE: ${name} failed"
                     echo error.message
                     throw error
                 }
