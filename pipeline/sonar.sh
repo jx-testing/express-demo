@@ -10,4 +10,6 @@ echo 'sonar.projectVersion=1.0' >> sonar-project.properties
 echo 'sonar.sources=.' >> sonar-project.properties 
 ./node_modules/sonar-scanner/bin/sonar-scanner -X -Dsonar.login=admin -Dsonar.password=admin -Dsonar.host.url=http://democluster-team1-sonarqube-sonarqube.democluster-team1.svc.cluster.local:9000
 
+chown -R 10000:10000 .scannerwork
+
 
