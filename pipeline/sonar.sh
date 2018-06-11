@@ -10,7 +10,8 @@ npm i sonar-scanner && chown -R 10000:10000 node_modules
 	-Dsonar.projectKey=dandevops:demo \
 	-Dsonar.projectName=demo \
 	-Dsonar.projectVersion=1.0 \
-	-Dsonar.sources=examples
+	-Dsonar.sources=examples \
+	-Dsonar.exclusions=examples/downloads/**
 
 chown -R 10000:10000 .scannerwork
 
