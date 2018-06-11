@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "This is sonar.sh"
 
-npm i sonar-scanner
+npm i sonar-scanner && chown -R 10000:10000 node_modules
 
 echo 'sonar.host.url=http://sonarqube-sonarqube:9000' > sonar-scanner.properties
 echo 'sonar.projectKey=dandevops:nodejs-hello' >> sonar-project.properties
